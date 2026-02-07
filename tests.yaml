@@ -95,3 +95,21 @@ tests:
       expect:
         fromBalance: "6.00"
         toBalance: "5.00"
+
+  isEmailValid:
+    - name: valid_email
+      given: { email: "a@b.com" }
+      expect: { result: true }
+
+    - name: invalid_email
+      given: { email: "a@@b.com" }
+      expect: { result: false }
+
+  isAmountValid:
+    - name: valid_amount
+      given: { amount: "1.25" }
+      expect: { result: true }
+
+    - name: invalid_amount
+      given: { amount: "1.001" }
+      expect: { result: false }
