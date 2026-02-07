@@ -37,3 +37,18 @@ Adds money to the account balance.
 - Amount must be greater than 0
 - Amount can have at most 2 decimal places
 - Throw IllegalArgumentException if amount is invalid
+
+## withdraw
+Removes money from the account balance.
+
+- Amount must be greater than 0
+- Amount can have at most 2 decimal places
+- If amount is greater than balance, throw IllegalStateException
+
+## transfer
+Transfers money from one account to another.
+
+- Target account cannot be null
+- Amount must be greater than 0
+- Amount can have at most 2 decimal places
+- If insufficient funds, throw IllegalStateException
