@@ -22,3 +22,8 @@ Creates a new BankAccount.
 - Initial balance must not be null
 - Initial balance must be 0 or greater
 - Throw IllegalArgumentException if inputs are invalid
+
+## getBalance
+Returns the current balance.
+
+- Balance should never be negative
