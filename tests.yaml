@@ -79,3 +79,19 @@ tests:
         amount: "3.00"
       expectException: IllegalStateException
 
+  transfer:
+    - name: transfer_moves_money
+      given:
+        from:
+          email: "from@x.com"
+          initialBalance: "10.00"
+        to:
+          email: "to@x.com"
+          initialBalance: "1.00"
+      when:
+        call: transfer
+        to: to
+        amount: "4.00"
+      expect:
+        fromBalance: "6.00"
+        toBalance: "5.00"
