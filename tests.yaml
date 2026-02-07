@@ -38,3 +38,44 @@ tests:
         call: getEmail
       expect:
         email: "a@b.com"
+
+  deposit:
+    - name: deposit_adds_money
+      given:
+        email: "a@b.com"
+        initialBalance: "1.00"
+      when:
+        call: deposit
+        amount: "2.50"
+      expect:
+        balance: "3.50"
+
+    - name: deposit_zero_not_allowed
+      given:
+        email: "a@b.com"
+        initialBalance: "1.00"
+      when:
+        call: deposit
+        amount: "0.00"
+      expectException: IllegalArgumentException
+      
+  withdraw:
+    - name: withdraw_subtracts_money
+      given:
+        email: "a@b.com"
+        initialBalance: "10.00"
+      when:
+        call: withdraw
+        amount: "3.00"
+      expect:
+        balance: "7.00"
+
+    - name: withdraw_too_much
+      given:
+        email: "a@b.com"
+        initialBalance: "2.00"
+      when:
+        call: withdraw
+        amount: "3.00"
+      expectException: IllegalStateException
+
