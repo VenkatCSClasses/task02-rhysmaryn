@@ -27,3 +27,6 @@ Creates a new BankAccount.
 Returns the current balance.
 
 - Balance should never be negative
+
+## getEmail
+Returns the email associated with the account.
