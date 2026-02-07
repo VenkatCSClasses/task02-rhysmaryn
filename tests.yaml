@@ -1,0 +1,20 @@
+tests:
+  constructor:
+    - name: valid_constructor
+      given:
+        email: "user@example.com"
+        initialBalance: "10.00"
+      expect:
+        balance: "10.00"
+      
+    - name: invalid_email
+      given:
+        email: "userexample.com"
+        initialBalance: "10.00"
+      expectException: IllegalArgumentException
+
+    - name: negative_balance
+      given:
+        email: "user@example.com"
+        initialBalance: "-1.00"
+      expectException: IllegalArgumentException
