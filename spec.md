@@ -52,3 +52,21 @@ Transfers money from one account to another.
 - Amount must be greater than 0
 - Amount can have at most 2 decimal places
 - If insufficient funds, throw IllegalStateException
+
+## isEmailValid
+Checks whether an email is valid.
+
+Returns true if:
+- email is not null or blank
+- email contains exactly one '@'
+- there is at least one character before '@'
+- domain contains a '.'
+- domain does not start or end with '.'
+
+## isAmountValid
+Checks whether a monetary amount is valid.
+
+Returns true if:
+- amount is not null
+- amount is greater than 0
+- amount has at most 2 decimal places
