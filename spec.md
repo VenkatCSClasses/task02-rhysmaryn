@@ -30,3 +30,10 @@ Returns the current balance.
 
 ## getEmail
 Returns the email associated with the account.
+
+## deposit
+Adds money to the account balance.
+
+- Amount must be greater than 0
+- Amount can have at most 2 decimal places
+- Throw IllegalArgumentException if amount is invalid
