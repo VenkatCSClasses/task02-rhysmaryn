@@ -18,3 +18,23 @@ tests:
         email: "user@example.com"
         initialBalance: "-1.00"
       expectException: IllegalArgumentException
+  
+  getBalance:
+    - name: returns_initial_balance
+      given:
+        email: "a@b.com"
+        initialBalance: "7.25"
+      when:
+        call: getBalance
+      expect:
+        balance: "7.25"
+
+  getEmail:
+    - name: returns_email
+      given:
+        email: "a@b.com"
+        initialBalance: "1.00"
+      when:
+        call: getEmail
+      expect:
+        email: "a@b.com"
